@@ -1,4 +1,4 @@
 Flask==2.1.1
 requests==2.27.1
-bs4
+bs4==0.0.1
 environs==9.3.4

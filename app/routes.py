@@ -10,7 +10,8 @@ def init_routes(app: Flask):
     def parser():
         urls = []
         if request.method == 'POST':
-            ...
+            a = request.form.get('Url')
+            print(a)
             # получаем ссылку
             # понимакм как скачать
             # выгружаем список
@@ -18,7 +19,7 @@ def init_routes(app: Flask):
             # перевод
             # urls на новые
 
-        return render_template("parser.html", urls=urls)
+        return render_template("parser.html")
 
     @app.get('/about')
     def about():
