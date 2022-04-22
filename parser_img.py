@@ -7,13 +7,23 @@ class ParsPage:
 
     def __init__(self, url: str, html_class: str, referer: str):
         """Инициализация класса"""
+
+        if type(url) != str:
+            raise ValueError
+        if type(html_class) != str:
+            raise ValueError
+        if type(referer) != str:
+            raise ValueError
         self.url = url
         self.html_class = html_class
         self.referer = referer
 
     def __gethtml(self):
         """Получение HTML страницы в формате bs4"""
-        self.html = BeautifulSoup(requests.get(url).text, 'html.parser')
+        if self.url != None:
+            self.html = BeautifulSoup(requests.get(url).text, 'html.parser')
+        else:
+            TypeError()
 
     def geturlsimgs(self):
         """Получение ссылок на изображения"""
@@ -65,6 +75,6 @@ if __name__ == "__main__":
     a = ParsPage(url=url, html_class=html_class, referer=referer)
     a.geturlsimgs()
     a.corecturlsimgs("https://www.readm.org")
-    a.geturlsimgs()
+    a.getimgs()
 
     print()

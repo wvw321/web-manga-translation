@@ -1,10 +1,15 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from parser_img import ParsPage
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
+    if request.method == 'POST':
+        a = request.form.get('Url')
+        print(a)
+
     return render_template("index.html")
 
 
@@ -15,5 +20,3 @@ def about():
 
 if __name__ == "__main__":
     app.run(debug=True)
-    img = open("/img/en_1.jpg")
-
