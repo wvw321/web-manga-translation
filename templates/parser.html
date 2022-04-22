@@ -12,15 +12,17 @@
     <header class="d-flex justify-content-center py-3">
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="" class="nav-link active" aria-current="page">Главная</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link">О проекте</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">О проекте</a></li>
         </ul>
     </header>
 </div>
 
 <div class="container px-5">
-    <img src="/static/img/en_1.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
-         loading="lazy">
-</div>
+    {% for url in urls %}
+        <img src="{{ url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+             loading="lazy">
+        </div>
+    {% endfor %}
 
 
 </body>
