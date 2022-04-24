@@ -17,17 +17,23 @@
     </header>
 </div>
 
-<form class="d-flex"   method="post" id="textform1">
+{% if exception %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">{{exception}}
+</div>
+{% endif %}
+
+<form class="d-flex" method="post" id="textform1">
     <input class="form-control me-2" type="search" placeholder="Search" name="Url" aria-label="Search">
-    <button class="btn btn-outline-success"  action= "/" type="submit">Search</button>
+    <button class="btn btn-outline-success" action="/" type="submit">Search</button>
 </form>
+
 
 <div class="container px-5">
     {% for url in urls %}
-        <img src="{{ url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
-             loading="lazy">
-        </div>
+    <img src="{{ url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+         loading="lazy">
     {% endfor %}
+</div>
 
 
 </body>

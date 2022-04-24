@@ -2,3 +2,5 @@ Flask==2.1.1
 requests==2.27.1
 bs4==0.0.1
 environs==9.3.4
+beautifulsoup4==4.11.1
+validators==0.18.2

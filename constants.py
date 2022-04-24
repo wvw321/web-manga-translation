@@ -6,3 +6,12 @@ READM_CONFIG = dict(
     base_url='https://www.readm.org/',
     html_class='ch-images ch-image-container'
 )
+
+SITE_LIST = {'readmanganato.com': READMANGATO_CONFIG,
+             'www.readm.org': READM_CONFIG
+             }
+
+
+
+
+
