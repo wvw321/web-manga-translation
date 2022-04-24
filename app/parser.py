@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from config import STATIC_FOLDER
 
 
 class ParsPage:
@@ -45,9 +46,15 @@ class ParsPage:
         """Сохранение изображений в файл"""
         if self.save_directory is not None:
             self.path_to_imgs.clear()
+
             for x in range(self.imgs.__len__()):
-                directory = self.save_directory + '/' + str(x) + '.jpg'
+                directory = STATIC_FOLDER + self.save_directory + '/' + str(x) + '.jpg'
                 img_file = open(directory, 'wb')
                 img_file.write(self.imgs[x])
                 img_file.close()
-                self.path_to_imgs.append(directory)
+                self.path_to_imgs.append('/static' + self.save_directory + '/' + str(x) + '.jpg')
+
+
+
+
+
